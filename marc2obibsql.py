@@ -50,7 +50,7 @@ with open(file_name, 'rb') as fh:
 					subfieldid = str(randint(1, 10000000))
 					out.write('INSERT INTO biblio_subfield (bibid, fieldid, subfieldid, seq, subfield_cd, subfield_data) VALUES (' + bibid + ', ' + fieldid + ', ' + subfieldid + ', '
 						+ str(subfieldseq) + ", '"
-						+ subfield[0] + "', '" + subfield[1] + "');\n")
+						+ subfield[0] + "', '" + subfield[1].replace("'", "''") + "');\n")
 			previous_tag = f.tag;
 
 out.close()
